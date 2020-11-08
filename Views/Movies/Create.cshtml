@@ -1,0 +1,55 @@
+﻿@model MoviesProject.Models.Movie
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+
+@using (Html.BeginForm("Create", "Movies", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary()
+    @Html.AntiForgeryToken()
+    @*<div class="form-horizontal">
+        <h4>Movies</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.title, htmlAttributes: new { @class = "control-label col-md-2"})
+        <div class="col-md-10">
+            @Html.EditorFor(m => m.title, new { htmlAttributes = new {@class = "form-control"}})
+            @Html.ValidationMessageFor(model => model.title, "", new { @class = "text-danger"})
+
+        </div>
+
+
+    </div>*@
+
+
+    @Html.LabelFor(m => m.title)
+    @Html.EditorFor(m => m.title)
+    <br />
+
+    @Html.LabelFor(m => m.price)
+    @Html.EditorFor(m => m.price)
+
+    @Html.LabelFor(m => m.releaseDate)
+    @Html.EditorFor(m => m.releaseDate)
+
+    @Html.LabelFor(m => m.images)
+    @Html.EditorFor(m => m.images)
+    <input type="file" name="ImageFile" />
+
+    @Html.LabelFor(m => m.genre)
+    @Html.EditorFor(m => m.genre)
+
+
+    <input type="submit" value="Add Movie" viewBag.message />
+}
+
+@Html.ActionLink("Back to Movies", "Index")
+

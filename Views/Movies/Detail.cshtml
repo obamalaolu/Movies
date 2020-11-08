@@ -1,0 +1,30 @@
+﻿@model MoviesProject.Models.Movie
+
+@{
+    ViewBag.Title = "Detail";
+}
+
+<h2>Detail</h2>
+
+<dl>
+    <dt> @Html.DisplayNameFor(m => m.title)</dt>
+    <dd>@Html.DisplayFor(m => m.title)</dd>
+
+
+    <dt> @Html.DisplayNameFor(m => m.price)</dt>
+    <dd>@Html.DisplayFor(m => m.price)</dd>
+
+    <dt> @Html.DisplayNameFor(m => m.genre)</dt>
+    <dd>@Html.DisplayFor(m => m.genre)</dd>
+
+    <dt> @Html.DisplayNameFor(m => m.images)</dt>
+    <dd>@Html.DisplayFor(m => m.images)</dd>
+
+    <dt> @Html.DisplayNameFor(m => m.releaseDate)</dt>
+    <dd>@Html.DisplayFor(m => m.releaseDate)</dd>
+
+</dl>
+
+
+@Html.ActionLink("Back to Movies", "Index")
+@Html.ActionLink("Edit", "Edit")

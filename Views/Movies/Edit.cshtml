@@ -1,0 +1,35 @@
+﻿@model MoviesProject.Models.Movie
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    <h4>Movie</h4>
+    @Html.ValidationSummary()
+    @Html.LabelFor(m => m.title)
+    @Html.EditorFor(m => m.title)
+
+    @Html.LabelFor(m => m.releaseDate)
+    @Html.EditorFor(m => m.releaseDate)
+
+    @Html.LabelFor(m => m.genre)
+    @Html.EditorFor(m => m.genre)
+
+    @Html.LabelFor(m => m.images)
+    @Html.EditorFor(m => m.images)
+
+    @Html.LabelFor(m => m.price)
+    @Html.EditorFor(m => m.price)
+
+    @*@Html.LabelFor(m => m.CRUD)
+        @Html.EditorFor(m => m.CRUD)*@
+
+    <input type="submit" value="Save Changes" />
+
+}
+
+@Html.ActionLink("Back to List", "Index")
